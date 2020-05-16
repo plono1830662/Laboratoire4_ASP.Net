@@ -1,0 +1,63 @@
+﻿@model Laboratoire4Prog.Models.TeteTypeViewModel;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Liste des Tétés</h2>
+
+<p>
+    <a asp-action="Create">Ajouter une entré</a>
+</p>
+<form asp-controller="Tetes" asp-action="Index">
+    <p>
+        <select asp-for="TypeTete" asp-items="Model.Types">
+            <option value="">All</option>
+        </select>
+
+        Description: <input type="text" name="SearchString">
+        <input type="submit" value="Filtrer" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tetes[0].Descript)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tetes[0].HeureTete)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tetes[0].Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tetes[0].Comment)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tetes) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descript)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeureTete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

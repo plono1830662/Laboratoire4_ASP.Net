@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Laboratoire4Prog</title>
+    <title>@ViewData["Title"] - Application de Tétés</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Laboratoire4Prog</a>
+                <a class="navbar-brand" asp-controller="Tetes" asp-action="Index">Application Tétés</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -41,7 +41,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2020 - Laboratoire4Prog</p>
+            &copy; 2020 - Application Tétés - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </footer>
     </div>
 

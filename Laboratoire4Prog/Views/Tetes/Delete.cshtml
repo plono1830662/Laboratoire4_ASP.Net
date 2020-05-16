@@ -1,0 +1,45 @@
+﻿@model Laboratoire4Prog.Models.Tetes
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Supprimer</h2>
+
+<h3>Voulez-vous vraiment supprimer cette entré?</h3>
+<div>
+    <h4>Tétés</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descript)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descript)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HeureTete)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HeureTete)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-default" /> |
+        <a asp-action="Index">Retour à la liste</a>
+    </form>
+</div>

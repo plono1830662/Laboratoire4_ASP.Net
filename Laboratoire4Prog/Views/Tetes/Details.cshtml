@@ -1,0 +1,42 @@
+﻿@model Laboratoire4Prog.Models.Tetes
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tetes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descript)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descript)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HeureTete)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HeureTete)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
